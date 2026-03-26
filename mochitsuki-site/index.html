@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>朝日町町内会</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="images/favicon.png" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+    <li><a href="portfolio.html">PORTFOLIO</a></li>
+  </head>
+
+  <body class="sub-page">
+    <!-- ===== ヘッダー ===== -->
+    <header>
+      <div class="header-inner">
+        <h1 class="logo">
+          <a href="index.html">
+            <img src="images/logo.png" alt="" />
+            <span>朝日町町内会</span>
+          </a>
+        </h1>
+
+        <nav>
+          <ul class="nav">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#news">お知らせ</a></li>
+            <li><a href="#gallery">イベント</a></li>
+            <li><a href="#access">アクセス</a></li>
+          </ul>
+        </nav>
+
+        <!-- ハンバーガー -->
+        <div class="menu-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero-slider">
+      <div class="slide active">
+        <img src="images/mochitsuki-hero.jpg" />
+      </div>
+
+      <div class="slide">
+        <img src="images/festival-hero.jpg" />
+      </div>
+
+      <div class="slide">
+        <img src="images/park-hero.jpg" />
+      </div>
+      <div class="hero-text">
+        <h1>朝日町町内会</h1>
+        <p>地域とつながり、安心して暮らせるまちづくり</p>
+      </div>
+    </section>
+
+    <!-- ===== NEWS ===== -->
+    <section id="news" class="container fade">
+      <h2>お知らせ</h2>
+
+      <div class="news-list">
+        <div class="news-card">
+          <div class="card-img">
+            <img src="images/mochitsuki.jpg" />
+          </div>
+          <h3>餅つき大会</h3>
+          <p>地域交流イベントとして餅つき大会を開催します。</p>
+          <a href="mochitsuki.html" class="btn">詳しく見る</a>
+        </div>
+
+        <div class="news-card">
+          <div class="card-img">
+            <img src="images/festival1.jpg" />
+          </div>
+          <h3>夏祭り</h3>
+          <p>地域の皆さまと交流する夏祭りを開催します。</p>
+          <a href="festival.html" class="btn">詳しく見る</a>
+        </div>
+
+        <div class="news-card">
+          <div class="card-img">
+            <img src="images/park1.jpg" />
+          </div>
+          <h3>公園清掃</h3>
+          <p>地域美化活動として公園清掃を行います。</p>
+          <a href="clean.html" class="btn">詳しく見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="concept">
+      <h2>地域とつながるまちづくり</h2>
+      <p>朝日町町内会では、季節ごとのイベントや地域活動を通じて、 人と人とのつながりを大切にしています。</p>
+    </section>
+
+    <!-- ===== ギャラリー ===== -->
+    <section id="gallery" class="container fade">
+      <h2>イベント写真</h2>
+
+      <div class="gallery">
+        <!-- 餅つき -->
+        <img src="images/mochitsuki1.jpg" />
+        <img src="images/mochitsuki2.jpg" />
+        <img src="images/mochitsuki3.jpg" />
+
+        <!-- 夏祭り -->
+        <img src="images/festival1.jpg" />
+        <img src="images/festival2.jpg" />
+        <img src="images/festival3.jpg" />
+
+        <!-- 美化清掃（ここが抜けてる） -->
+        <img src="images/park1.jpg" />
+        <img src="images/park2.jpg" />
+        <img src="images/park3.jpg" />
+      </div>
+      <p class="gallery-text">
+        地域の皆さまと共に活動している様子です。 四季を通じてさまざまなイベントを開催しています。
+      </p>
+    </section>
+
+    <!-- ===== マップ ===== -->
+    <section id="access" class="container fade">
+      <h2>アクセス</h2>
+
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=鹿児島中央公園&output=embed"></iframe>
+
+        <p style="text-align: center; margin-top: 10px">
+          <a href="https://www.google.com/maps/place/鹿児島中央公園" target="_blank"> Google マップで見る </a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== フッター ===== -->
+    <footer>
+      <div class="footer-sns">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
+      <p>© 朝日町町内会 2026</p>
+    </footer>
+
+    <!-- ===== JS ===== -->
+    <script>
+      /* スライダー */
+      let slides = document.querySelectorAll(".slide");
+      let index = 0;
+
+      function autoSlide() {
+        slides[index].classList.remove("active");
+        index++;
+        if (index >= slides.length) {
+          index = 0;
+        }
+        slides[index].classList.add("active");
+      }
+      setInterval(autoSlide, 4000);
+
+      /* フェード */
+      const fade = document.querySelectorAll(".fade");
+
+      function fadeIn() {
+        fade.forEach(function (el) {
+          const pos = el.getBoundingClientRect().top;
+          const screen = window.innerHeight;
+          if (pos < screen - 100) {
+            el.classList.add("show");
+          }
+        });
+      }
+
+      window.addEventListener("scroll", fadeIn);
+      window.addEventListener("load", fadeIn);
+
+      /* ハンバーガー */
+      const menuBtn = document.querySelector(".menu-btn");
+      const nav = document.querySelector(".nav");
+
+      if (menuBtn && nav) {
+        menuBtn.addEventListener("click", function () {
+          menuBtn.classList.toggle("active");
+          nav.classList.toggle("active");
+        });
+      }
+    </script>
+  </body>
+</html>

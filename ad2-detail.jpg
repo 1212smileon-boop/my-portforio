@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>広告デザイン</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<section class="detail ad2-page">
+
+  <div class="detail-gallery">
+    <img src="images/ad2-page.jpg">
+   
+  </div>
+
+  <h2>広告デザイン</h2>
+  <p>ターゲットに合わせたデザインを意識しました。</p>
+
+  <a href="index.html">←戻る</a>
+
+</section>
+<section class="detail ad-page"></section>
+</body>
+</html>

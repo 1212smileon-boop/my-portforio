@@ -1,0 +1,779 @@
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  margin: 0;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 60vh; /* ←小さくした */
+  min-height: 400px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.slider {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  width: 220%;
+  z-index: 1;
+}
+
+.track {
+  display: flex;
+  animation: slide 45s linear infinite;
+}
+
+.track img {
+  width: 300px;
+  height: 60vh;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-left: -10px;
+  opacity: 0.9;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  color: #000;
+}
+
+.hero-text h1 {
+  font-size: 36px;
+}
+
+/* ================= ABOUT ================= */
+.about {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.about-icon {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+}
+
+/* ================= GALLERY ================= */
+.gallery {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  aspect-ratio: 3 / 5;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .3s;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+/* ================= WORKS（トップ） ================= */
+.works {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.works-card {
+  max-width: 300px;*/
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.works-card img {
+  width: 100%;
+}
+
+/* ================= WORK DETAIL（←追加） ================= */
+.work-detail {
+  padding: 80px 20px;
+}
+
+.work-container {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.work-image {
+  flex: 1;
+}
+
+.work-image img {
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.work-text {
+  flex: 1;
+  line-height: 1.8;
+}
+
+.work-text h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.work-text ul {
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+/* ================= 広告・名刺 ================= */
+/*.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 50px 20px;
+}
+
+.ad-card {
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.ad-card img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}*/
+/* 広告カード（A4縦比率） */
+/* グリッドはそのまま */
+/* グリッドはそのまま */
+/* -------------------------------
+   WORKS
+---------------------------------*/
+.works {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.works-card {
+  max-width: 300px;
+  margin: auto;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.works-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* 画像をカードいっぱいにトリミング */
+  display: block;
+  margin-bottom: 10px;
+}
+/* -------------------------------
+   広告・名刺グリッド
+---------------------------------*/
+/* グリッド2列 */
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  padding: 50px 20px;
+  justify-items: center;
+}
+
+/* 共通カード */
+.card {
+  width: 100%;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 広告カード */
+.ad-card {
+  max-width: 400px;   /* 広告だけ大きく */
+}
+
+/* 名刺カード */
+
+/* 名刺カード */
+.meishi-card {
+  max-width: 220px;   /* 180px → 220px に広げる */
+  width: 100%;
+  text-align: center;
+}
+
+.meishi-card img {
+  width: 100%;
+  height: auto;       /* 縦横比維持 */
+  object-fit: contain; /* 画像全体表示 */
+  display: block;
+  margin: 0 auto;
+}
+/* 画像縦長対応 */
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;   /* 縦長でも全体表示 */
+  display: block;
+  background-color: #fff;
+}
+
+/* 説明文 */
+.card .description {
+  margin: 10px 15px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* ボタン */
+.card .btn {
+  margin: 10px 0 20px;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+  .ads-grid {
+    grid-template-columns: 1fr;
+  }
+  .ad-card, .meishi-card {
+    max-width: 90%;
+  }
+}
+/* レスポンシブ */
+@media screen and (max-width: 768px) {
+  .ads-grid {
+    grid-template-columns: 1fr;
+  }
+  .card {
+    max-width: 90%;
+  }
+}
+/* ================= CONTACT ================= */
+/* Contact セクション全体 */
+.contact {
+  max-width: 600px;           /* 横幅を制限 */
+  margin: 0 auto;             /* 中央寄せ */
+  padding: 80px 20px;         /* 上下余白 */
+  text-align: center;
+  background-color: #f9f9f9;  /* 優しい背景色 */
+  border-radius: 12px;        /* 角丸で柔らかい印象 */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05); /* 軽い影 */
+}
+
+/* フォーム全体 */
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;                  /* 入力欄の間隔 */
+}
+
+/* インプット・テキストエリア */
+.contact input,
+.contact textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+/* フォーカス時 */
+.contact input:focus,
+.contact textarea:focus {
+  border-color: #66aaff;
+  outline: none;
+}
+
+/* ボタン */
+/* ボタン */
+.contact button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #d8c7b7; /* ベージュ系 */
+  color: #333;               /* 文字色は濃いめで見やすく */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* ホバー時 */
+.contact button:hover {
+  background-color: #c1b09d; /* 少し濃いベージュに変化 */
+}
+/* ================= BUTTON ================= */
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+/* ================= スマホ対応 ================= */
+@media (max-width: 768px) {
+
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-text h1 {
+    font-size: 22px;
+  }
+
+  .track img {
+    width: 180px;
+    height: 50vh;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ads-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .work-container {
+    flex-direction: column;
+  }
+
+  .works,
+  .contact {
+    padding: 50px 20px
+  }
+
+}
+/* detailページのギャラリー画像調整 */
+.detail-gallery {
+  text-align: center;     /* 画像を中央に配置 */
+  margin-bottom: 20px;
+}
+
+.detail-gallery img {
+  max-width: 600px;       /* 画像の最大横幅 */
+  width: 100%;            /* 横幅はコンテナに合わせる */
+  height: auto;           /* 高さは比率を維持 */
+  object-fit: cover;      /* トリミングして収める */
+  display: inline-block;  /* 中央揃えでブロック化 */
+  border-radius: 6px;     /* お好みで角を丸く */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* 少し立体感 */
+}
+
+/* 名刺詳細ページを中央寄せ */
+.cards-detail {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.cards-detail img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.cards-detail p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.cards-detail .btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.cards-detail .btn:hover {
+  background-color: #c1b09d;
+}
+
+/* 前面カード（1枚目） */
+.cards-detail img.front {
+  width: 100%;
+  max-width: 400px;   /* 大きめ */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+/* 裏面カード（2枚目） */
+.cards-detail img.back {
+  width: 100%;
+  max-width: 220px;   /* 小さめ */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.cards-wrapper { 
+  position: relative; 
+  height: 350px; 
+}
+
+.cards-wrapper .meishi-large {
+   position: absolute; 
+   right:0; top:0; 
+   width:300px; 
+   transform:rotate(-5deg); 
+   z-index:2; 
+  }
+
+.cards-wrapper .meishi-small {
+   position: absolute; 
+   left:0; 
+   bottom:0;
+   width:180px; 
+   transform:rotate(-5deg); 
+   z-index:1; 
+  }
+
+.cards-detail .description {
+   margin-top:380px; 
+  }
+
+  /* wrapperは相対配置 */
+.cards-wrapper {
+  position: relative;
+  height: 350px; /* 画像が収まる高さに調整 */
+}
+
+/* 大きい名刺1 */
+.cards-wrapper .meishi-large {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;   /* 大きさ */
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 小さい名刺2 */
+.cards-wrapper .meishi-small {
+  position: absolute;
+  left: 20px;      /* 少しずらす */
+  bottom: 20px;    /* 少しずらす */
+  width: 180px;    /* 小さめ */
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* コメント文は画像の下 */
+.cards-detail .description {
+  margin-top: 360px; /* wrapperの高さ + 少し余白 */
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ボタンも中央寄せ */
+.cards-detail .btn {
+  display: inline-block;
+  margin: 15px 0 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* wrapperは親要素を相対位置に */
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;  /* 好きな横幅に調整 */
+  height: 400px;     /* 適宜、画像サイズに合わせる */
+  margin: 0 auto;    /* ページ中央に配置 */
+}
+
+/* 大きい名刺（右上に配置） */
+.cards-wrapper .meishi-large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;    /* 大きさ */
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 小さい名刺（左下に配置） */
+.cards-wrapper .meishi-small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 180px;    /* 小さめ */
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* コメントとボタンをwrapperの下に配置 */
+.cards-detail .description {
+  margin-top: 420px;  /* wrapperの高さ+余白 */
+  text-align: center;
+}
+
+.cards-detail .btn {
+  display: inline-block;
+  margin: 15px auto 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+/* wrapperで位置基準を作る */
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;  /* ページ中央に収まる横幅 */
+  height: 350px;     /* 画像が収まる高さ */
+  margin: 0 auto;    /* ページ中央寄せ */
+}
+
+/* 大きい名刺1（右上） */
+.cards-wrapper .meishi-large {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: auto;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 小さい名刺2（左下） */
+.cards-wrapper .meishi-small {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
+}
+
+/* コメント文は wrapper の下に中央寄せ */
+.cards-detail .description {
+  margin-top: 370px; /* wrapper の高さ + 少し余白 */
+  text-align: center;
+}
+
+/* ボタン中央寄せ */
+.cards-detail .btn {
+  display: inline-block;
+  margin: 15px auto 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7; /* ベージュ系 */
+  color: #333;
+  text-decoration: none;
+}
+
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 350px;
+  margin: 0 auto;
+}
+
+/* 大きい名刺 */
+.cards-wrapper .meishi-large {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 300px;
+  height: auto;
+  z-index: 2;
+}
+
+/* 小さい名刺 */
+.cards-wrapper .meishi-small {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  width: 180px;
+  height: auto;
+  z-index: 1;
+}
+
+/* コメントとボタン */
+.cards-detail .description {
+  margin-top: 360px;
+  text-align: center;
+}
+
+.cards-detail .btn {
+  display: inline-block;
+  margin: 15px auto 0;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7;
+  color: #333;
+  text-decoration: none;
+}
+
+/* wrapperで横並び中央寄せ */
+.meishi-wrapper {
+  display: flex;
+  justify-content: center; /* 横方向中央寄せ */
+  gap: 20px;               /* 2枚の間隔 */
+  flex-wrap: wrap;         /* 画面が狭いときは折り返し */
+  margin: 20px 0;
+}
+
+/* 名刺画像 */
+.meishi-wrapper .meishi {
+  width: 200px;     /* 好きな大きさに調整 */
+  height: auto;     /* 縦横比維持 */
+  object-fit: contain;
+  display: block;
+}
+
+/* コメント文 */
+.cards-detail .description {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ボタン中央寄せ */
+.cards-detail .btn {
+  display: inline-block;
+  margin: 0 auto 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7; /* ベージュ系 */
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* 画像横並び中央寄せ */
+.meishi-wrapper {
+  display: flex;
+  justify-content: center; /* 横方向中央寄せ */
+  gap: 20px;               /* 2枚の間隔 */
+  flex-wrap: wrap;         /* 画面狭い場合は折り返し */
+  margin: 20px 0;
+}
+
+.meishi-wrapper .meishi {
+  width: 200px; /* 好きな大きさに調整 */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* コメント文 */
+.cards .description {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 0.95rem;
+}
+
+/* ボタン中央寄せ */
+.cards .btn {
+  display: inline-block;
+  margin: 10px auto 20px;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: #d8c7b7; /* ベージュ系 */
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* wrapper: 横並び中央寄せ */
+.meishi-wrapper {
+  display: flex;
+  justify-content: center; /* 横中央寄せ */
+  gap: 30px;               /* 画像同士の間隔 */
+  flex-wrap: wrap;         /* 画面狭いときは折り返し */
+  margin: 20px 0;
+}
+
+/* 名刺画像に影をつける */
+.meishi-wrapper .meishi {
+  width: 200px;              /* 好きな大きさに調整 */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* 影 */
+  border-radius: 6px;        /* 角を少し丸く */
+  background-color: #fff;    /* 白背景で影が見えるように */
+}
