@@ -1,19 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  const track = document.querySelector(".slide-track");
+  const track = document.querySelector(".track");
 
-  // 取得できてるか確認
   if (!track) {
-    console.log("slide-trackが見つからない");
+    console.log("trackが見つからない");
     return;
   }
 
   let position = 0;
-  const speed = 0.5; // 動く速さ
+  const speed = 0.5;
 
   function animate() {
     position -= speed;
-
     track.style.transform = `translateX(${position}px)`;
 
     // 無限ループ
@@ -26,4 +24,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
   animate();
 });
-alert("OK");
